@@ -18,7 +18,7 @@ module.exports = function numWords (input) {
     throw new Error('overflow') // Does not support converting more than 9 digits yet
   }
 
-  const [, n1, n2, n3, n4, n5] = ('000000000' + numStr).substr(-9).match(regex) // left pad zeros
+  const [, n1, n2, n3, n4, n5] = ('000000000' + numStr).slice(-9).match(regex) // left pad zeros
 
   let str = ''
   str += n1 != 0 ? (getLT20(n1) || getGT20(n1)) + 'million ' : ''
