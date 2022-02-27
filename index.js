@@ -21,8 +21,8 @@ module.exports = function numWords (input) {
   const [, n1, n2, n3, n4, n5] = ('000000000' + numStr).substr(-9).match(regex) // left pad zeros
 
   let str = ''
-  str += n1 != 0 ? (getLT20(n1) || getGT20(n1)) + 'crore ' : ''
-  str += n2 != 0 ? (getLT20(n2) || getGT20(n2)) + 'lakh ' : ''
+  str += n1 != 0 ? (getLT20(n1) || getGT20(n1)) + 'million ' : ''
+  str += n2 != 0 ? (getLT20(n2) || getGT20(n2)) + 'hundred ' : ''
   str += n3 != 0 ? (getLT20(n3) || getGT20(n3)) + 'thousand ' : ''
   str += n4 != 0 ? getLT20(n4) + 'hundred ' : ''
   str += n5 != 0 && str != '' ? 'and ' : ''
